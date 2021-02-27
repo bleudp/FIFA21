@@ -17,17 +17,17 @@ Los requirements de hardware son exigentes, requieren una capacidad computaciona
 - Tarjeta grafica adicional (lo intente sin ella y se me quemo la tarjeta anterior por defecto)
 - 100TB SSD (la cache bro)
 
-## About
-
-Created by [@m3t4f0r4](https://twitter.com/Frantkdz) and [@blueudp](https://twitter.com/blueudp)
-
-Thanks [@0xmrivas](https://twitter.com/0xmrivas) por la ayuda. No lo habriamos conseguido sin ti.
-
 ## Images
 
 ![Imagen1](image1.jpg)
 ![Imagen2](image2.jpg)
 ![Imagen3](image3.jpg)
+
+## About
+
+Created by [@m3t4f0r4](https://twitter.com/Frantkdz) and [@blueudp](https://twitter.com/blueudp)
+
+Thanks [@0xmrivas](https://twitter.com/0xmrivas) por la ayuda. No lo habriamos conseguido sin ti.
 
 ## Contact
 
