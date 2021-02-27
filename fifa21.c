@@ -1,6 +1,6 @@
 /*
 
-FIFA 2021 - Created by @m3t4f0r4 and @blueudp
+FIFA 2021 - Created by @m3t4f0r4 and @blueudp // @bleudp
 
 Shout out to @0xmrivas for the awesome help
 
