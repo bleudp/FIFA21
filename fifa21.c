@@ -48,9 +48,11 @@ void append_players(void) {
 
 int gen_rnd(int min, int max) {
 	int rnd = 0;
-	if(!s_seed)
+	if(!s_seed) {
 		srand((unsigned)rand());
-	rnd = (rand() % max) + min;
+		s_seed = 1;
+	}
+	rnd = (rand() + min) % max;
 	return rnd;
 }
 
