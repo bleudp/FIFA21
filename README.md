@@ -21,7 +21,7 @@ Los requirements de hardware son exigentes, requieren una capacidad computaciona
 
 Created by [@m3t4f0r4](https://twitter.com/Frantkdz) and [@blueudp](https://twitter.com/blueudp)
 
-Thanks @0xmrivas por la ayuda. No lo habriamos conseguido sin ti.
+Thanks [@0xmrivas](https://twitter.com/0xmrivas) por la ayuda. No lo habriamos conseguido sin ti.
 
 ## Contact
 
