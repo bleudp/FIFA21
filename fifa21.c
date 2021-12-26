@@ -1,11 +1,7 @@
 /*
-
 FIFA 2021 - Created by @m3t4f0r4 and @blueudp
-
 Shout out to @0xmrivas for the awesome help
-
 :)
-
 */
 
 #include <stdio.h>
@@ -13,7 +9,7 @@ Shout out to @0xmrivas for the awesome help
 #include <string.h>
 
 #define MAX_NAME_SZ 50
-#define MAX_PLAYERS 4
+#define MAX_PLAYERS 5
 #define MAX_PERCENTAGE 100
 #define MIN_PERCENTAGE 1
 
@@ -21,16 +17,22 @@ int s_seed = 0;
 
 int last = 0;
 
-char *futbolistas[MAX_PLAYERS];
+const char *futbolistas[MAX_PLAYERS+1]; // +1 to make space for a NULL pointer as a terminator
 
-int scores[] = {100, 30, 60, 1, 100};
+int scores[MAX_PLAYERS] = {100, 30, 60, 1, 100};
 
 void append_nil(void) {
-	futbolistas[last] = 0x0;
+	futbolistas[last] = NULL;
 	return;
 }
 
-void append_player(char *name) {
+void append_player(const char *name) {
+	if(name != NULL && last >= MAX_PLAYERS) {
+	   OOB_ERR:
+		puts("Err.: Trying to write pointer out of bounds!");
+		exit(1);
+	} else if(name == NULL && last >= MAX_PLAYERS+1)
+		goto OOB_ERR;
 	futbolistas[last] = name;
 	last++;
 	return;
@@ -48,8 +50,10 @@ void append_players(void) {
 
 int gen_rnd(int min, int max) {
 	int rnd = 0;
-	if(!s_seed)
+	if(!s_seed) {
 		srand((unsigned)rand());
+		s_seed = 1;
+	}
 	rnd = (rand() % max) + min;
 	return rnd;
 }
@@ -57,8 +61,9 @@ int gen_rnd(int min, int max) {
 int get_player_score(char *buf) {
 	int prob = 0;
 	int coincides = 0;
-	for(int i = 0 ; i < 4 ; i++) {
-		if(strcmp(buf, futbolistas[i]) == 0) {
+	for(int i = 0 ; i < MAX_PLAYERS ; i++) {
+		if(futbolistas[i] != NULL && 
+				strcmp(buf, futbolistas[i]) == 0) {
 			prob = scores[i];
 			coincides = 1;
 		}
@@ -136,5 +141,7 @@ puts("  .,.\_/,...,|,_)(_,|,.,|,_)(_,|,.,|,_)(_,|,.,|,_)(_,|.,.|,_).,.\n\n");
 		
 		x++;
 	}
+	
+	return 0;
 
 }
